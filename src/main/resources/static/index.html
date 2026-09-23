@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +22,9 @@
                 <div class="mb-3">
                     <input id="description" class="form-control" placeholder="Description (optional)">
                 </div>
-                <button type="submit" class="btn btn-primary">Add</button>
+                <button id="submit-button" type="submit" class="btn btn-primary">Add</button>
+                <!-- only visible while editing a task (d-none = hidden in Bootstrap) -->
+                <button id="cancel-button" type="button" class="btn btn-secondary d-none">Cancel</button>
             </form>
             <!-- error messages from the API show up here -->
             <div id="error" class="alert alert-danger mt-3 d-none"></div>

@@ -8,42 +8,42 @@
   ],
   "item": [
     {
-      "name": "Listar tareas",
+      "name": "List tasks",
       "request": { "method": "GET", "url": "{{baseUrl}}" }
     },
     {
-      "name": "Ver una tarea",
+      "name": "Get one task",
       "request": { "method": "GET", "url": "{{baseUrl}}/1" }
     },
     {
-      "name": "Crear tarea",
+      "name": "Create task",
       "request": {
         "method": "POST",
         "url": "{{baseUrl}}",
         "header": [{ "key": "Content-Type", "value": "application/json" }],
-        "body": { "mode": "raw", "raw": "{\n  \"title\": \"Estudiar Spring\",\n  \"description\": \"Terminar la seccion de REST\"\n}" }
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"Study Spring\",\n  \"description\": \"Finish the REST section\"\n}" }
       }
     },
     {
-      "name": "Crear tarea sin titulo (da 400)",
+      "name": "Create task without title (400)",
       "request": {
         "method": "POST",
         "url": "{{baseUrl}}",
         "header": [{ "key": "Content-Type", "value": "application/json" }],
-        "body": { "mode": "raw", "raw": "{\n  \"title\": \"\",\n  \"description\": \"esto tiene que fallar\"\n}" }
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"\",\n  \"description\": \"this should fail\"\n}" }
       }
     },
     {
-      "name": "Editar tarea",
+      "name": "Update task",
       "request": {
         "method": "PUT",
         "url": "{{baseUrl}}/1",
         "header": [{ "key": "Content-Type", "value": "application/json" }],
-        "body": { "mode": "raw", "raw": "{\n  \"title\": \"Estudiar Spring REST\",\n  \"description\": \"Ya casi\"\n}" }
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"Study Spring REST\",\n  \"description\": \"Almost done\"\n}" }
       }
     },
     {
-      "name": "Borrar tarea",
+      "name": "Delete task",
       "request": { "method": "DELETE", "url": "{{baseUrl}}/1" }
     }
   ]

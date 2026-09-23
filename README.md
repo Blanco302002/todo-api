@@ -1,31 +1,31 @@
 # todo-api
 
-API REST de tareas (To-Do) hecha con Spring Boot, Spring Data JPA y H2.
+To-Do REST API built with Spring Boot, Spring Data JPA and H2.
 
-## Tecnologías
+## Tech stack
 
 - Java 25
 - Spring Boot 4 (Web, Data JPA, Validation)
-- H2 (base de datos en archivo, en `./data`)
+- H2 (file-based database, stored in `./data`)
 
-## Cómo correrlo
+## How to run
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-La app queda en `http://localhost:8080`.
+The app runs at `http://localhost:8080`.
 
-- Consola de H2: `http://localhost:8080/h2-console`
+- H2 console: `http://localhost:8080/h2-console`
   - JDBC URL: `jdbc:h2:file:./data/testdb`
-  - Usuario: `sa`, contraseña vacía
+  - User: `sa`, empty password
 
 ## Endpoints
 
-| Método | URL               | Qué hace              | Respuesta            |
-|--------|-------------------|-----------------------|----------------------|
-| GET    | `/api/tasks`      | Lista todas las tareas | 200                 |
-| GET    | `/api/tasks/{id}` | Devuelve una tarea    | 200 / 404            |
-| POST   | `/api/tasks`      | Crea una tarea        | 201 / 400            |
-| PUT    | `/api/tasks/{id}` | Edita una tarea       | 200 / 400 / 404      |
-| DELETE | `/api/tasks/{id}` | Borra una tarea       | 204 / 404            |
+| Method | URL               | Description        | Response        |
+|--------|-------------------|--------------------|-----------------|
+| GET    | `/api/tasks`      | List all tasks     | 200             |
+| GET    | `/api/tasks/{id}` | Get one task       | 200 / 404       |
+| POST   | `/api/tasks`      | Create a task      | 201 / 400       |
+| PUT    | `/api/tasks/{id}` | Update a task      | 200 / 400 / 404 |
+| DELETE | `/api/tasks/{id}` | Delete a task      | 204 / 404       |
