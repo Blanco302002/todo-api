@@ -29,18 +29,3 @@ La app queda en `http://localhost:8080`.
 | POST   | `/api/tasks`      | Crea una tarea        | 201 / 400            |
 | PUT    | `/api/tasks/{id}` | Edita una tarea       | 200 / 400 / 404      |
 | DELETE | `/api/tasks/{id}` | Borra una tarea       | 204 / 404            |
-
-Ejemplo de body para POST y PUT:
-
-```json
-{
-  "title": "Estudiar Spring",
-  "description": "Terminar la sección de REST"
-}
-```
-
-El `title` es obligatorio. Si falta, la API responde 400 con el motivo.
-
-## Probar con Postman
-
-Importá la colección `postman/todoapi.postman_collection.json` en Postman.
