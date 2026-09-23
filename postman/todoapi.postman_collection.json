@@ -1,0 +1,50 @@
+{
+  "info": {
+    "name": "todoapi",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080/api/tasks" }
+  ],
+  "item": [
+    {
+      "name": "Listar tareas",
+      "request": { "method": "GET", "url": "{{baseUrl}}" }
+    },
+    {
+      "name": "Ver una tarea",
+      "request": { "method": "GET", "url": "{{baseUrl}}/1" }
+    },
+    {
+      "name": "Crear tarea",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"Estudiar Spring\",\n  \"description\": \"Terminar la seccion de REST\"\n}" }
+      }
+    },
+    {
+      "name": "Crear tarea sin titulo (da 400)",
+      "request": {
+        "method": "POST",
+        "url": "{{baseUrl}}",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"\",\n  \"description\": \"esto tiene que fallar\"\n}" }
+      }
+    },
+    {
+      "name": "Editar tarea",
+      "request": {
+        "method": "PUT",
+        "url": "{{baseUrl}}/1",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": { "mode": "raw", "raw": "{\n  \"title\": \"Estudiar Spring REST\",\n  \"description\": \"Ya casi\"\n}" }
+      }
+    },
+    {
+      "name": "Borrar tarea",
+      "request": { "method": "DELETE", "url": "{{baseUrl}}/1" }
+    }
+  ]
+}
